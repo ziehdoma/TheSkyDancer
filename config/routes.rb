@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/posts/:id/edit', to: 'posts#edit', as: 'edit'
   delete '/posts/:id', to: 'posts#destroy', as: 'destroy', method: :delete
   devise_for :mes
-   root 'posts#index'
+   root 'pages#about'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
