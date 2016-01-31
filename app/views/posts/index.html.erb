@@ -1,18 +1,21 @@
 
-	
-	<article>
-		
+	<% @posts.each do |post| %> 
+	<article>	
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                	<% @posts.each do |post| %>   	
-             		<h2><%= post.title %></h2></br> 
+                	
+             		<h2><%= link_to post.title %></h2></br> 
 					<hr>
-					<p><%= post.body%></p>
+					<p><%= post.body.truncate(250)%><%= link_to "read more", myblog_path(post.id)%></p>
 					<p>By:<%= post.author%></p>
 					<hr>
                 </div>
             </div>
         </div>
-        <% end %>
+        
     </article>
+    <% end %>
+
+
+    

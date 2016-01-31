@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
   
+  def blog
+    set_params
+  end 
 
   def index
   	@posts = Post.all

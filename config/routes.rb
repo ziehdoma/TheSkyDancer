@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'pages/contact'
   get '/about', to: "pages#about"
   get '/contact', to: "pages#contact"
+  get '/myblog/:id', to: "posts#blog", as: "myblog"
 
   get '/titles', to: 'posts#index' 
   get '/blog', to: 'posts#new'
