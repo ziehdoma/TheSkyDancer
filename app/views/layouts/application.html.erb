@@ -10,10 +10,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 <head>
-  <title>Ziehblog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <head>
+      <title>Zieh Blog</title>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
 </head>
 <body>
 
@@ -27,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">..</a>
+                <a class="navbar-brand"><%= link_to 'Home', root_path%></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -40,7 +41,7 @@
 		      		<% end %>
 		      
 		     		<li><%= link_to 'About', about_path %></li>
-		     		<li><%= link_to 'Blogs', blog_path %></li>
+		     		<li><%= link_to 'Blogs', blog_path%></li>
 		     		<li><%= link_to 'Contact', contact_path%></li>
 
 			   		<% if me_signed_in? %>
@@ -56,7 +57,7 @@
         <!-- /.container -->
     </nav> 
     	<!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
+        
     <header class="intro-header">
         <div class="container">
             <div class="row">
@@ -64,18 +65,46 @@
                     <div class="page-heading">
                         <h1>The Sky Dancer</h1>
                         <hr class="small">
-                        <span class="subheading">Zieh Drolma</span>
+                        <span class="subheading"></span>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </header>    
 
     		
 <%= yield %>
 
 
-
+        <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="www.facebook.com/ziehdoma"><img src="../images/facebook.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="../images/linked-in.jpg">
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a href="www.facebook.com/ziehdoma"><img src="../images/twitter.png">
+                            </a>
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; www.ziehdoma.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

@@ -1,10 +1,23 @@
-<%= form_for @post, url: blog_path, html: { multipart: true }  do |f| %>
-	
-	<%= f.text_field :title, placeholder: 'title'%> </br>
-	<%= f.text_field :body, placeholder: 'body' %> </br>
-	<%= f.text_field :author, placeholder: 'author' %> </br>
-
-	<%= f.submit :submit %>
 
 
-<% end %>
+
+<hr>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">                
+				<% if current_me %>
+					<h2>Enter and submit a post below:</h2>
+						<%= form_for @post, url: blog_path, html: {multipart: true} do |f| %>
+							<p><%= f.text_field :title, placeholder: "Enter post title" %> </p>
+							<p><%= f.text_area :body, placeholder: "Enter post body" %> </p>
+							<p><%= f.text_field :author, placeholder: 'author' %> </p>
+							<%= f.submit class: "btn btn-success"%>
+							<br>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+			</div>
+		</div>
+</div>
