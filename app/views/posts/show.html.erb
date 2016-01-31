@@ -1,0 +1,8 @@
+<h1><%= @post.title %></h1>
+<h5> <%= @post.body %></h5>
+<p>By: <%= @post.author %></p>
+
+
+<%= link_to "Edit", edit_path %>
+
+<%= link_to "Delete", destroy_path(@post), method: :delete, data:{ deletable: true} %>
