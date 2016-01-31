@@ -60,6 +60,11 @@ hr.small {
   border-width: 4px;
   border-color: white;
 }
+ li img {
+  height: 20px;
+  width: 20px;
+}
+
 .navbar-custom {
   position: absolute;
   top: 0;
@@ -156,16 +161,16 @@ hr.small {
     transform: translate3d(0, 100%, 0);
   }
 }
+
 .intro-header {
-  background-color: #616275;
-  background: no-repeat center center;
+  background-image: image-url('light.jpg');
+  // background: no-repeat center center;
   background-attachment: scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
   margin-bottom: 50px;
-  background-image: url("../images/header.jpg")
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     font-family: inherit;

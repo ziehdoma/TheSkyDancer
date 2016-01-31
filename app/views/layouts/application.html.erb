@@ -21,6 +21,7 @@
 	<!-- <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="mainheader">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -28,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand"><%= link_to 'Home', root_path%></a>
+                <a class="navbar-brand"><%= link_to 'Home', blog_path%></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,12 +42,11 @@
 		      		<% end %>
 		      
 		     		<li><%= link_to 'About', about_path %></li>
-		     		<li><%= link_to 'Blogs', blog_path%></li>
+		     		<li><%= link_to 'Blogs', root_path%></li>
 		     		<li><%= link_to 'Contact', contact_path%></li>
 
 			   		<% if me_signed_in? %>
 			     		<li><%= link_to 'Log out', destroy_me_session_path,  method: :delete %></li>
-			     	<% else %>
 			      		<li><%= link_to 'Sign up', new_me_registration_path %></li>
 			      		<li><%= link_to 'Login', me_session_path %></li>
 		     		<% end %>
@@ -57,7 +57,6 @@
         <!-- /.container -->
     </nav> 
     	<!-- Page Header -->
-        
     <header class="intro-header">
         <div class="container">
             <div class="row">
@@ -65,12 +64,13 @@
                     <div class="page-heading">
                         <h1>The Sky Dancer</h1>
                         <hr class="small">
-                        <span class="subheading"></span>
+                        <span class="subheading"> </span>
                     </div>
                 </div>
             </div>
         </div>
-    </header>    
+    </header>   
+    </div> 
 
     		
 <%= yield %>
@@ -80,26 +80,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="www.facebook.com/ziehdoma"><img src="../images/facebook.png">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="../images/linked-in.jpg">
-                            </a>
-                            
-                        </li>
-                        <li>
-                            <a href="www.facebook.com/ziehdoma"><img src="../images/twitter.png">
-                            </a>
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="social-media">
+                        <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://www.facebook.com/zieh.doma"><%= image_tag("facebook.png", :alt => "rss feed")%>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><%= image_tag("twitter.png", :alt => "rss feed") %>
+                                </a>
+                                
+                            </li>
+                            <li>
+                                <a href="www.linked"><%= image_tag("linked-in.png", :alt => "rss feed") %>
+                                </a>
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <p class="copyright text-muted">Copyright &copy; www.ziehdoma.com</p>
                 </div>
             </div>
