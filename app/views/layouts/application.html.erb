@@ -52,6 +52,10 @@
 			      		<li><%= link_to 'Sign up', new_me_registration_path %></li>
 			      		<li><%= link_to 'Login', me_session_path %></li>
 		     		<% end %>
+                    <li class="search-box"><%= form_tag(posts_path, :method => "get",  id: "search-form") do %>
+                        <%= text_field_tag :search, params[:search], placeholder: "search ..." %>
+                        <i class="icon-search"></i>
+                    <% end %> 
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
