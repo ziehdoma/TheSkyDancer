@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/contact', to: "pages#contact"
   get '/myblog/:id', to: "posts#blog", as: "myblog"
   patch '/posts/:id/edit', to: "posts#update", as: "update"
+  get '/stories', to: "pages#stories"
   # post '/blog', to: 'posts#create'
   resources :posts do
     resources :comments

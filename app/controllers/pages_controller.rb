@@ -5,5 +5,7 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def stories
+  end 
   
 end

@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def index
   	@posts = Post.all
+
   end 
 
   def new
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
   end 
   def update
     set_params
-    if @post.update (params[:post].permit(:title, :body, :author))
+    if @post.update (params[:post].permit(:title, :body, :author, :image))
       redirect_to myblog_path 
     else
       render 'edit'
@@ -48,7 +49,7 @@ class PostsController < ApplicationController
 
   private 
   def post_params
-  	params.require(:post).permit(:title, :body, :author)
+  	params.require(:post).permit(:title, :body, :author, :image)
   end 
 
   def set_params

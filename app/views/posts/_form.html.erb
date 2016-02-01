@@ -10,6 +10,7 @@
 							<p><%= f.text_field :title, placeholder: "Enter post title" %> </p>
 							<p><%= f.text_area :body, placeholder: "Enter post body" %> </p>
 							<p><%= f.text_field :author, placeholder: 'author' %> </p>
+							 <%= f.file_field :image %>
 							<%= f.submit class: "btn btn-success"%>
 							<br>
 						<% end %>
