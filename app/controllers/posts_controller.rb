@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end 
 
   def index
-  	@posts = Post.all
+  	@posts = Post.all.order('created_at DESC')
 
   end 
 
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   def destroy
   	set_params
   	@post.destroy
-  	redirect_to root_path, alert: "Post deleted"
+  	redirect_to posts_path, alert: "Post deleted"
   end 
 
 

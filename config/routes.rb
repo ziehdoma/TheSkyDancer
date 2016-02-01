@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   get '/myblog/:id', to: "posts#blog", as: "myblog"
   patch '/posts/:id/edit', to: "posts#update", as: "update"
   get '/stories', to: "pages#stories"
+  delete '/post/:id', to: 'posts#destroy', as: 'delete', method: :delete 
   # post '/blog', to: 'posts#create'
   resources :posts do
     resources :comments
   end
+  
   devise_for :mes
    root 'pages#about'
 
