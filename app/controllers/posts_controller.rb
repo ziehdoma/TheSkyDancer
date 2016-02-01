@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def create
   	@post = Post.new(post_params)
   	if @post.save
-  		redirect_to blogs_path(@post), alert: "Post Created!"
+  		redirect_to myblog_path(@post), alert: "Post Created!"
   	else 
   		render :new
   	end 

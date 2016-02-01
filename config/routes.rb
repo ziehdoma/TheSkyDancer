@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   get 'pages/about'
 
-  get 'pages/contact'
   get '/about', to: "pages#about"
   get '/contact', to: "pages#contact"
   get '/myblog/:id', to: "posts#blog", as: "myblog"
   patch '/posts/:id/edit', to: "posts#update", as: "update"
+  # post '/blog', to: 'posts#create'
   resources :posts do
     resources :comments
   end
