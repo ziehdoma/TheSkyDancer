@@ -28,7 +28,15 @@ class PostsController < ApplicationController
 
   def edit
   	set_params
-  	redirect_to blog_path
+  	
+  end 
+  def update
+    set_params
+    if @post.update (params[:post].permit(:title, :body, :author))
+      redirect_to myblog_path 
+    else
+      render 'edit'
+    end 
   end 
 
   def destroy

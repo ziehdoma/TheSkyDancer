@@ -9,17 +9,18 @@
                     <h5><%= post.created_at.to_date.strftime("%m/%d/%Y") %></h5></br> 
 					<hr>
 					<p><%= post.body.truncate(250)%><%= link_to "read more", myblog_path(post.id)%></p>
-					<h4>By:<%= post.author%></h4>
+					<h4>By:<%= post.author%></h4>  
                     <% if me_signed_in? %>
-                    <h5> <%= link_to "Edit", edit_path(post.id) %> ||
+                    <h5> <%= link_to "Edit", edit_post_path(post.id) %> ||
 
-                    <%= link_to "Delete", destroy_path(post.id), method: :delete, data:{ deletable: true} %></h5>
+                    <%= link_to "Delete", edit_post_path(post.id), method: :delete, data:{ deletable: true} %></h5>
                     <%end %>
                     <hr>
                 </div>
             </div>
         </div>
         
+
     </article>
     <% end %>
    

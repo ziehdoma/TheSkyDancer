@@ -7,10 +7,23 @@
                     <hr>
                     <p><%=@post.body %></p>
                     <p>By:<%=@post.author%></p>
+                    <% if me_signed_in? %>
+                        <h5> <%= link_to "Edit", edit_post_path(@post.id) %> ||
+                        <%= link_to "Delete", edit_post_path(@post.id), method: :delete, data:{ deletable: true} %> </h5>
+                    <%end %>
+                    
+                    <h5>Comments:</h5>
+                    <h> <%= render @post.comments %> </h5>
+                    <hr>
+                    <%= render 'comments/form' %>
+                   
                     <hr>
                 </div>
             </div>
         </div>
+
         
-    </article>
-    
+ </article>
+
+ 
+      

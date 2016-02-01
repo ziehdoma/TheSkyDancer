@@ -5,15 +5,21 @@ Rails.application.routes.draw do
   get '/about', to: "pages#about"
   get '/contact', to: "pages#contact"
   get '/myblog/:id', to: "posts#blog", as: "myblog"
-
-  get '/titles', to: 'posts#index' 
-  get '/blog', to: 'posts#new'
-  post '/blog', to: 'posts#create'
-  get '/blogs/:id', to: 'posts#show', as: 'blogs'
-  get '/posts/:id/edit', to: 'posts#edit', as: 'edit'
-  delete '/posts/:id', to: 'posts#destroy', as: 'destroy', method: :delete
+  patch '/posts/:id/edit', to: "posts#update", as: "update"
+  resources :posts do
+    resources :comments
+  end
   devise_for :mes
    root 'pages#about'
+
+
+  # get '/titles', to: 'posts#index' 
+  # get '/blog', to: 'posts#new'
+  # post '/blog', to: 'posts#create'
+  # get '/blogs/:id', to: 'posts#show', as: 'blogs'
+  # get '/posts/:id/edit', to: 'posts#edit', as: 'edit'
+  # delete '/posts/:id', to: 'posts#destroy', as: 'destroy', method: :delete
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
